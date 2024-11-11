@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pha5e Hero Section Recreation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>PHA5E</h1>
+            <nav>
+                <a href="#">Our vision</a>
+                <a href="#">Our team</a>
+                <a href="#">Our projects</a>
+                <a href="#">Contact us</a>
+                <a href="#">FR/EN</a>
+            </nav>
+        </div>
+
+        <section class="hero">
+            <div class="floating-images">
+                <img src="c1.jpg" class="floating-image top-left" alt="Concept Image 1">
+                <img src="c2.jpeg" class="floating-image top-right" alt="Concept Image 2">
+                <img src="c3.jpg" class="floating-image bottom-center" alt="Concept Image 3">
+            </div>
+            <h2>IMAGINING UNIQUE CONCEPTS AND DIGITAL EXPERIENCES</h2>
+        </section>
+    </header>
+
+    <script>
+
+const images = document.querySelectorAll(".floating-image");
+const heroText = document.querySelector(".hero h2");
+
+images.forEach(image => {
+    image.addEventListener("mouseover", () => {
+        heroText.style.opacity = "0.1";
+
+        images.forEach(img => {
+            if (img !== image) {
+                img.style.opacity = "0"; // Hide the other images
+            }
+        });
+    });
+
+    image.addEventListener("mouseout", () => {
+        heroText.style.opacity = "1";
+
+        images.forEach(img => {
+            img.style.opacity = "1"; 
+        });
+    });
+});
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #f0a500; 
+}
+
+
+.hero {
+    position: relative;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 95vh;
+}
+
+.hero h2 {
+    font-size: 6vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    z-index: 10; 
+
+}
+.floating-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.floating-image {
+    position: absolute;
+    width: 20%;
+    opacity: 0.8;
+    transition: transform 0.2s;
+}
+
+
+.top-left {
+    top: 10%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.top-right {
+    top: 10%;
+    right: 10%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.bottom-center {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 7s ease-in-out infinite;
+}
+
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+.floating-image:hover {
+    z-index: 15; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 1; 
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out;
+    transform: translateZ(20px);
+}
+.hero.effect {
+    background-color: #333; 
+}
+
+.floating-image:hover {
+    z-index: 15;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transform: scale(1.05) translateZ(20px);
+}
